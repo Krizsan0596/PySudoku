@@ -1,8 +1,6 @@
 import numpy as np
 import cv2
-import easyocr
 
-reader = easyocr.Reader(['en'])
 
 
 def display(board):
@@ -78,7 +76,7 @@ def extract_sudoku(image_path):
     for i in range(9):
         for j in range(9):
             cell = warped[i * cell_size:(i + 1) * cell_size, j * cell_size:(j + 1) * cell_size]
-            results = reader.readtext(cell)
+            #add paddleocr recognition here
             if results:
                 digit = results[0][1]
                 if digit.isnumeric():
@@ -105,4 +103,3 @@ puzzle = np.array([
 #     print("No solution exists.")
 
 print(extract_sudoku(r"C:\Users\krist\OneDrive\Legion\Scripts\PySudoku\Sudoku.jpg"))
-
