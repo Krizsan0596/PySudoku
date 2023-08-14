@@ -1,0 +1,5 @@
+venv
+.idea/*
+Dockerfile
+Sudoku1.jpg
+Sudoku.jpg
